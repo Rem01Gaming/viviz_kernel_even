@@ -86,7 +86,7 @@ static int sdcardfs_inode_set(struct inode *inode, void *lower_inode)
 
 struct inode *sdcardfs_iget(struct super_block *sb, struct inode *lower_inode, userid_t id)
 {
-	struct sdcardfs_inode_info *info;
+	struct __maybe_unused sdcardfs_inode_info *info;
 	struct inode_data data;
 	struct inode *inode; /* the new inode to return */
 
@@ -258,7 +258,7 @@ static struct dentry *__sdcardfs_lookup(struct dentry *dentry,
 	const struct qstr *name;
 	struct path lower_path;
 	struct dentry *ret_dentry = NULL;
-	struct sdcardfs_sb_info *sbi;
+	struct __maybe_unused sdcardfs_sb_info *sbi;
 
 	sbi = SDCARDFS_SB(dentry->d_sb);
 	/* must initialize dentry operations */
